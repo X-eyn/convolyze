@@ -1,18 +1,12 @@
-"use client";
+'use client'
 import { useCallback } from "react";
+import { loadSlim } from "tsparticles-slim";
 import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import { Engine } from "tsparticles-engine";
-
-// Color Theme Configuration
-const colorTheme = {
-    primary: '#3B7AD8',
-    secondary: '#5E4AB8'
-};
+import type { Container, Engine } from "tsparticles-engine";
 
 const ParticlesBackground = () => {
     const particlesInit = useCallback(async (engine: Engine) => {
-        await loadFull(engine);
+        await loadSlim(engine);
     }, []);
 
     return (
@@ -20,55 +14,29 @@ const ParticlesBackground = () => {
             id="tsparticles"
             init={particlesInit}
             options={{
-                fullScreen: {
-                    enable: true,
-                    zIndex: 0
-                },
                 background: {
                     color: {
                         value: "transparent",
                     },
                 },
-                fpsLimit: 120,
-                interactivity: {
-                    events: {
-                        onClick: {
-                            enable: false,
-                            mode: "push",
-                        },
-                        onHover: {
-                            enable: true,
-                            mode: "repulse",
-                        },
-                        resize: true,
-                    },
-                    modes: {
-                        push: {
-                            quantity: 4,
-                        },
-                        repulse: {
-                            distance: 100,
-                            duration: 0.4,
-                        },
-                    },
-                },
                 particles: {
                     color: {
-                        value: colorTheme.primary,
+                        value: "#4299E1",
                     },
                     links: {
-                        color: colorTheme.secondary,
+                        color: "#4299E1",
                         distance: 150,
                         enable: true,
                         opacity: 0.2,
                         width: 1,
                     },
+                    collisions: {
+                        enable: false,
+                    },
                     move: {
                         direction: "none",
                         enable: true,
-                        outModes: {
-                            default: "bounce",
-                        },
+                        outMode: "bounce",
                         random: false,
                         speed: 1,
                         straight: false,
@@ -78,10 +46,10 @@ const ParticlesBackground = () => {
                             enable: true,
                             area: 800,
                         },
-                        value: 80,
+                        value: 40,
                     },
                     opacity: {
-                        value: 0.2,
+                        value: 0.3,
                     },
                     shape: {
                         type: "circle",
@@ -90,7 +58,15 @@ const ParticlesBackground = () => {
                         value: { min: 1, max: 3 },
                     },
                 },
-                ana: true,
+                detectRetina: true,
+            }}
+            style={{
+                position: "fixed",
+                zIndex: 0,
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
             }}
         />
     );

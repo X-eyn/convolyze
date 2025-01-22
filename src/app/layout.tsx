@@ -1,17 +1,15 @@
 'use client'
 import { Inter } from 'next/font/google'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 
-// Initialize the Inter font with full configuration
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '700', '800'],
   display: 'swap',
   variable: '--font-inter'
 })
 
-// Create a custom Chakra UI theme
 const theme = extendTheme({
   fonts: {
     heading: inter.style.fontFamily,
@@ -21,8 +19,14 @@ const theme = extendTheme({
     global: {
       body: {
         fontFamily: inter.style.fontFamily,
+        minHeight: '100vh',
+        overflowX: 'hidden'
       }
     }
+  },
+  config: {
+    initialColorMode: 'light',
+    useSystemColorMode: false,
   }
 })
 
@@ -32,9 +36,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.className}>
-      <body>
+    <html lang="en">
+      <body className={inter.className}>
         <ChakraProvider theme={theme}>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           {children}
         </ChakraProvider>
       </body>

@@ -62,6 +62,7 @@ export async function getGeminiChatResponse(bodyData: ExtendedChatParams) {
                
                Format using proper markdown for readability.
                Keep the summary concise but informative.
+               
            `;
        } else if (query.includes('percentage') || query.includes('statistics')) {
            structuredPrompt = `
