@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model meeting {
+  id            Int    @id @default(autoincrement())
+  title         String
+  duration      Int    @default(0)
+  transcribe    String? @db.LongText    // Changed from Text to LongText for MySQL
+}
+
+model meeting_response {
+  id           Int     @id @default(autoincrement())
+  meetingId    Int     @unique
+  response1    String? @db.LongText    // Changed from Text to LongText for MySQL
+  response2    String? @db.LongText
+  response3    String? @db.LongText
+  response4    String? @db.LongText
+}
