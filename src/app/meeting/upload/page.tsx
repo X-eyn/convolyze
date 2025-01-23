@@ -1,4 +1,4 @@
-import { MeetingUpload } from "@/components/MeetingUpload";
+import MeetingUpload from "@/components/MeetingUpload";
 
 const MeetingPage = async () => { 
     return (

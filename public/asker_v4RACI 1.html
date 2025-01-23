@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -53,7 +53,7 @@
             .section:hover {
                 margin-bottom: 20px;
                 border: 1px solid #aaa;
-                border-color: blue; /* Change the border color on hover */
+                border-color: blue;
                 padding: 5px;
             }
 
@@ -95,9 +95,7 @@
     [data-text*="Jenkins"] {
         color: blue;
         font-weight: bold;
-        /* Add any other styles you want */
     }
-
 
         </style>
     </head>
@@ -121,15 +119,9 @@
                 </div>
                 <input type="text" id="user-input" placeholder="Try clone, format..." style="width: 100%;">
                 
-                
                 <script>
     var globalVariable = "format a drive";
 
-
-                
-                
-                
-                
         document.addEventListener('DOMContentLoaded', function() {
         var inputBox = document.getElementById('user-input');
         
@@ -142,16 +134,13 @@
     </script>
         <script>
         document.addEventListener('DOMContentLoaded', function() {
-        // Select the input element
         var inputElement = document.getElementById('user-input');
-
-        // Focus on the input element
         inputElement.focus();
         });
     </script>
             </div>
             <div class="section" id="automation-section">
-                <b>Automation Chat Bot</b>...
+                <b>Automation Chat Bot</b>
                 <style>
     img {
         border: 1px solid #555;
@@ -170,13 +159,10 @@
                 <a onclick="handleClick(this.id)"  id="Linux"> Linux </a>
                 
                 <div id="automation-chat">
-                    <!-- Automation responses will be displayed here -->
                 </div>
             </div>
             <script>
             function handleClick(id) {
-
-            
             var  apiKey2="OPENAI_API_KEY";
     const xhr2 = new XMLHttpRequest();
     xhr2.open("POST", "https://api.openai.com/v1/chat/completions", true);
@@ -191,14 +177,12 @@
     xhr2.onreadystatechange = function () {
         if (xhr2.readyState === XMLHttpRequest.DONE) {
             if (xhr2.status === 200) {
-                // Parse and handle the response data
                 const responseData = JSON.parse(xhr2.responseText);
                 var chatWindow = document.getElementById('automation-chat');
                 var message = '<br><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.6.0/chatbot.svg" width=25px height=25px> ' + responseData.choices[0].message.content + '</div>';
                 chatWindow.innerHTML =message ;
                 
             } else {
-                // Handle errors
                 console.error('Error:', xhr2.status, xhr2.statusText);
             }
         }
@@ -207,14 +191,11 @@
     chatWindow.innerHTML = "connecting to OpenAI ..."+jsonData2 ;
     xhr2.send(jsonData2.replace('PLATFORM',id));
             }
-
             </script>
-            
-            
             
         <div class="section" id="duty-manager-section">
         <h5>Duty Manager : 
-        <a id="teamscollab" dlurl="https://teams.microsoft.com/l/chat/0/0?users=pchoubey@avaya.com,nbhawar@avaya.com,chaudhari16@avaya.com,pgosavi@avaya.com&topicName=IncidentTIMESTAMP&message=Helllo%20This%20is%20Ankur,%20need%20your%20help%20on%20this%20issue.%20could%20you%20get%20someone%20assigned%20as%20i%20am%20unable%20to%20reach%20anyone%20in%20the%20RACI"><u>Teams</u> 
+        <a id="teamscollab" dlurl="https://teams.microsoft.com/l/chat/0/0?users=john.smith@avaya.com,emily.johnson@avaya.com,david.brown@avaya.com,sarah.wilson@avaya.com&topicName=IncidentTIMESTAMP&message=Hello%20This%20is%20Ankur,%20need%20your%20help%20on%20this%20issue.%20could%20you%20get%20someone%20assigned%20as%20i%20am%20unable%20to%20reach%20anyone%20in%20the%20RACI"><u>Teams</u> 
         <script>
     const regex = /TIMESTAMP/g;
 
@@ -229,20 +210,20 @@
             url = url.replace(regex, function() {
         const date = new Date();
         return date.toISOString();
-    });          var newTab = window.open(url, '_blank', 'width=1,height=1,resizable=no,scrollbars=no'); // Open link in new tab
+    });          var newTab = window.open(url, '_blank', 'width=1,height=1,resizable=no,scrollbars=no');
             setTimeout(function(){
-                newTab.close(); // Close the new tab after a delay
-            }, 5999); // 3000 milliseconds = 3 seconds
+                newTab.close();
+            }, 5999);
             }
         });
         
     });
 
         </script>
-        , <a href="https://spaces.avayacloud.com/u/vermaa@avaya.com?videoMode=expanded&videoStart=true" target="_blank"> Spaces </a>
-        , <a href="https://web.whatsapp.com/send/?phone=919011040572&text=hi1&type=phone_number&app_absent=0" target="_blank"> Whatsapp Contact1 </a>
-        , <a href="https://web.whatsapp.com/send/?phone=917498755669&text=hi2&type=phone_number&app_absent=0" target="_blank"> Whatsapp Contact2 </a>
-        , <a href="https://web.whatsapp.com/send/?phone=917420949683&text=hi3&type=phone_number&app_absent=0" target="_blank"> Whatsapp Contact3 </a></h5>
+        , <a href="https://spaces.avayacloud.com/u/admin@avaya.com?videoMode=expanded&videoStart=true" target="_blank"> Spaces </a>
+        , <a href="https://web.whatsapp.com/send/?phone=447911123456&text=hi1&type=phone_number&app_absent=0" target="_blank"> Whatsapp Contact1 </a>
+        , <a href="https://web.whatsapp.com/send/?phone=447822654321&text=hi2&type=phone_number&app_absent=0" target="_blank"> Whatsapp Contact2 </a>
+        , <a href="https://web.whatsapp.com/send/?phone=447755987654&text=hi3&type=phone_number&app_absent=0" target="_blank"> Whatsapp Contact3 </a></h5>
         
         <table class="duty-manager-table" id="duty-manager-table">
             <thead>
@@ -256,98 +237,82 @@
                 </tr>
             </thead>
             <tbody id="duty-manager-body">
-                <!-- Duty Manager information will be dynamically added here -->
-                <tr data-url="https://teams.microsoft.com/l/chat/0/0?users=pchoubey@avaya.com">
-                    <td>Mr. Prakhar</td>
-                    <td>UTC+5:30</td>
+                <tr data-url="https://teams.microsoft.com/l/chat/0/0?users=john.smith@avaya.com">
+                    <td>Mr. John Smith</td>
+                    <td>UTC+0:00</td>
                     <td class="online">Online</td>
                     <td>High</td>
                     <td>Teams</td>
                     <td>Good</td>
                 </tr>
-                <tr data-url="https://teams.microsoft.com/l/chat/0/0?users=nbhawar@avaya.com">
-                    <td>Mr. Nitin</td>
-                    <td>UTC+5:30</td>
+                <tr data-url="https://teams.microsoft.com/l/chat/0/0?users=emily.johnson@avaya.com">
+                    <td>Ms. Emily Johnson</td>
+                    <td>UTC+0:00</td>
                     <td class="online">Online</td>
                     <td>High</td>
                     <td>Teams</td>
                 <td>Good</td>
     
     </tr>
-                <tr data-url="https://teams.microsoft.com/l/chat/0/0?users=chaudhari16@avaya.com">
-                    <td>Mr. Saurabh</td>
-                    <td>UTC+5:30</td>
+                <tr data-url="https://teams.microsoft.com/l/chat/0/0?users=david.brown@avaya.com">
+                    <td>Mr. David Brown</td>
+                    <td>UTC+0:00</td>
                     <td class="online">Online</td>
                     <td>High</td>
                     <td>Teams</td>
                     <td>Good</td>
                 </tr>
-                <tr data-url="https://teams.microsoft.com/l/chat/0/0?users=pgosavi@avaya.com">
-                    <td>Pravin</td>
-                    <td>UTC+5:30</td>
+                <tr data-url="https://teams.microsoft.com/l/chat/0/0?users=sarah.wilson@avaya.com">
+                    <td>Ms. Sarah Wilson</td>
+                    <td>UTC+0:00</td>
                     <td class="online">Online</td>
                     <td>High</td>
                     <td>Teams</td>
                     <td>Good</td>
                 </tr>
-                
             </tbody>
         </table>
         <script>
         var allRows = document.querySelectorAll('#duty-manager-table tbody tr');
 
-    // Add an event listener to each row
     allRows.forEach(function(row) {
     
         row.addEventListener('click', function() {
             var url = this.getAttribute('data-url');
         
             if (url) {
-            var newTab = window.open(url, '_blank', 'width=1,height=1,resizable=no,scrollbars=no'); // Open link in new tab
+            var newTab = window.open(url, '_blank', 'width=1,height=1,resizable=no,scrollbars=no');
             setTimeout(function(){
-                newTab.close(); // Close the new tab after a delay
-            }, 1099); // 3000 milliseconds = 3 seconds
+                newTab.close();
+            }, 1099);
             }
         });
         
     });
-
-
-        
-        
         </script>
     </div>
 
         </div>
 
         <script>
-        
-        
-            // Array of random names
-            var names = ["John Smith", "Jane Doe", "David Johnson", "Alice Brown", "Emma White", "Michael Clark", "Olivia Green", "William Lee", "Sophia Patel", "James Taylor", "Emily Wilson", "Daniel Thomas", "Ava Martin", "Matthew Robinson", "Isabella Hall", "Benjamin Hill", "Mia Young", "Joseph King", "Charlotte Turner", "Samuel Adams", "Amelia Lewis", "Alexander Wright", "Harper Hughes", "Davidson Edwards", "Ella Murphy", "Ryan Walker", "Grace Cook", "Daniel Bailey", "Chloe Rogers", "Jacob Scott", "Lily Parker", "Andrew Evans", "Sophie Morris", "Joshua Carter", "Scarlett Bennett", "Noah Phillips", "Aria Foster", "Logan Russell", "Madison Cooper", "Christopher Nelson", "Evelyn Coleman", "Jack Wright", "Victoria Morgan", "Gabriel Kelly", "Zoe Cox", "Ethan Brooks", "Hannah Richardson"];
+            var names = ["Oliver Taylor", "Charlotte Harris", "James Wilson", "Sophia Evans", "William Thompson", "Amelia Roberts"];
 
     var avayahandles = [
-    "pgosavi@avaya.com",
-    "pchoubey@avaya.com",
-    "nbhawar@avaya.com",
-    "chaudhari16@avaya.com",
-    "dsouzac@avaya.com",
-    "aneema@avaya.com",
-    "shahs@avaya.com",
-    "harpreets1@avaya.com"
+    "john.smith@avaya.com",
+    "emily.johnson@avaya.com",
+    "david.brown@avaya.com",
+    "sarah.wilson@avaya.com",
+    "michael.davis@avaya.com",
+    "laura.miller@avaya.com"
     ];
+    
     var avayaHandles1 = [
-    "Gosavi, Pravin (Pravin);pgosavi@avaya.com",
-    "Choubey, Prakhar (Prakhar);pchoubey@avaya.com",
-    "Bhawar, Nitin Mahadeo (Nitin);nbhawar@avaya.com",
-    "Chaudhari, Saurabh (Saurabh);chaudhari16@avaya.com",
-    "DSouza, Cedric Simon (Cedric);dsouzac@avaya.com",
-    "Neema, Anshul (Anshul);aneema@avaya.com",
-    "Shah, Shamik (Shamik);shahs@avaya.com",
-    "Singh, Harpreet (Harpreet Singh);harpreets1@avaya.com",
-    "Ravi, Rajagiri (Rajagiri);rravi@avaya.com",
-    "Anchuri, Vijay Kumar (Vijay);vanchuri@avaya.com",
-    "Lokare, Atul Khandu (Atul);akhandulokar@avaya.com"
+    "Smith, John (John);john.smith@avaya.com",
+    "Johnson, Emily (Emily);emily.johnson@avaya.com",
+    "Brown, David (David);david.brown@avaya.com",
+    "Wilson, Sarah (Sarah);sarah.wilson@avaya.com",
+    "Davis, Michael (Michael);michael.davis@avaya.com",
+    "Miller, Laura (Laura);laura.miller@avaya.com"
     ];
 
     var  apiKey="OPENAI_API_KEY";
@@ -365,28 +330,19 @@
     xhr.onreadystatechange = function () {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                // Parse and handle the response data
                 const responseData = JSON.parse(xhr.responseText);
                 var chatWindow = document.getElementById('chat-window');
                 var message = '<img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.6.0/chatbot.svg" width=25px height=25px> ' + responseData.choices[0].message.content + '</div>';
                 chatWindow.innerHTML +=message ;
                 
             } else {
-                // Handle errors
                 console.error('Error:', xhr.status, xhr.statusText);
             }
         }
     };
 
-    // Send the request with the JSON payload
     xhr.send(jsonData);
 
-
-
-
-
-
-            // Function to send a message
             function sendMessage() {
                 var userInput = document.getElementById('user-input').value;
                 globalVariable = userInput;
@@ -401,39 +357,30 @@
     xhr1.setRequestHeader("Authorization", `Bearer ${apiKey1}`);
     const requestData1 = {
         model: "gpt-3.5-turbo",
-    "messages": [{"role": "user", "content":"You have been asked a question " + userInput + " and now respond considering that you are words best lange language model that has prakhar, nitin , saurabh , pravin as a duty manager who are industry leaders and are online to help you to chat on teams . and also shamik, cedric, nitin, ankur as responsible, accountable and can be consulted and or informed as part of RACI matrix to get your job done. also a automation script is provided . when providing response provid line break for html so it can be parsed"}],
+    "messages": [{"role": "user", "content":"You have been asked a question " + userInput + " and now respond considering that you are words best lange language model that has John, Emily, David, Sarah as a duty manager who are industry leaders and are online to help you to chat on teams . and also Michael, Laura, David, Ankur as responsible, accountable and can be consulted and or informed as part of RACI matrix to get your job done. also a automation script is provided . when providing response provid line break for html so it can be parsed"}],
         temperature:0.7	
         };
     const jsonData1 = JSON.stringify(requestData1);
     xhr1.onreadystatechange = function () {
         if (xhr1.readyState === XMLHttpRequest.DONE) {
             if (xhr1.status === 200) {
-                // Parse and handle the response data
                 const responseData = JSON.parse(xhr1.responseText);
                 var chatWindow = document.getElementById('chat-window');
                 var message = '<br><img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.6.0/chatbot.svg" width=25px height=25px> ' + responseData.choices[0].message.content + '</div>';
                 chatWindow.innerHTML +=message ;
                 
             } else {
-                // Handle errors
                 console.error('Error:', xhr1.status, xhr1.statusText);
             }
         }
     };
     xhr1.send(jsonData1);
 
-
-                // Update RACI Matrix with chat text and randomly selected names
                 updateRACIMatrix(userInput);
-
-                // Check if the question can be automated
                 checkAutomation(userInput);
-
-                // Clear input field
                 document.getElementById('user-input').value = '';
             }
 
-            // Function to update RACI Matrix
             function updateRACIMatrix(userInput) {
                 var raciMatrix = document.getElementById('raci-matrix');
         var mydatatosplit=avayaHandles1[Math.floor(Math.random() * avayaHandles1.length)]
@@ -446,16 +393,14 @@
             var Informed = avayaHandles1[Math.floor(Math.random() * avayaHandles1.length)].split(";")[0].split(",")[1].split("(")[0];
             var Informeda = avayaHandles1[Math.floor(Math.random() * avayaHandles1.length)].split(";")[1];
                 
-                var newRow = '<tr style="border:0px;padding:0"><td style="border:0px">' + userInput + '</td><td><a href="mailto:' + Responsiblea.replace(' ', '').toLowerCase() + '?subject=URGENT_' + userInput + '&body=Hi  ' + Responsible +',  As per RACI you are responsible for the task mention on the email subject, hence need your immediate attention to reach out to me and lets connect on https://spaces.avayacloud.com/u/vermaa@avaya.com?videoMode=expanded&videoStart=true . Alternatively  you can also call or contact me on teams.&cc=' + Accountablea + ';' + Consulteda + ';' + Informeda + '"> ' + Responsible + '</a></td><td><a href="https://teams.microsoft.com/l/chat/0/0?users=' + Accountablea.replace(' ', '').toLowerCase() + '">' + Accountable + '</a></td><td><a href="https://teams.microsoft.com/l/chat/0/0?users=' + Consulteda.replace(' ', '').toLowerCase() + '">' + Consulted + '</a></td><td><a href="https://teams.microsoft.com/l/chat/0/0?users=' + Informeda.replace(' ', '').toLowerCase() + '">' + Informed + '</a></td></tr>';
+                var newRow = '<tr style="border:0px;padding:0"><td style="border:0px">' + userInput + '</td><td><a href="mailto:' + Responsiblea.replace(' ', '').toLowerCase() + '?subject=URGENT_' + userInput + '&body=Hi  ' + Responsible +',  As per RACI you are responsible for the task mention on the email subject, hence need your immediate attention to reach out to me and lets connect on https://spaces.avayacloud.com/u/admin@avaya.com?videoMode=expanded&videoStart=true . Alternatively  you can also call or contact me on teams.&cc=' + Accountablea + ';' + Consulteda + ';' + Informeda + '"> ' + Responsible + '</a></td><td><a href="https://teams.microsoft.com/l/chat/0/0?users=' + Accountablea.replace(' ', '').toLowerCase() + '">' + Accountable + '</a></td><td><a href="https://teams.microsoft.com/l/chat/0/0?users=' + Consulteda.replace(' ', '').toLowerCase() + '">' + Consulted + '</a></td><td><a href="https://teams.microsoft.com/l/chat/0/0?users=' + Informeda.replace(' ', '').toLowerCase() + '">' + Informed + '</a></td></tr>';
                 raciMatrix.innerHTML += newRow;
             }
 
-            // Function to check if the question can be automated
             function checkAutomation(userInput) {
                 var automationChat = document.getElementById('automation-chat');
 
                 if (userInput.toLowerCase().includes('clone') && userInput.toLowerCase().includes('vm')) {
-                    // Display PowerShell script for cloning a VM using vSphere API
                     automationChat.innerHTML = `
                         <p>To clone a VM using vSphere API and PowerShell:</p>
                         <pre>
@@ -465,25 +410,21 @@
     \$vCenterPassword = "your_vCenter_Password"
     Connect-VIServer -Server \$vCenterServer -User \$vCenterUser -Password \$vCenterPassword
 
-    # Define source and clone VM names
     \$sourceVM = "Name_of_Source_VM"
     \$cloneVM = "Name_of_Clone_VM"
 
-    # Get source VM object
     \$vm = Get-VM -Name \$sourceVM
 
-    # Create clone VM
     New-VM -VM \$vm -Name \$cloneVM -Location \$vm.VMhost
 
     Disconnect-VIServer -Server \$vCenterServer -Confirm:\$false
                         </pre>
                     `;
                 } else if (userInput.toLowerCase().includes('format windows drive')) {
-                    // Display PowerShell script for formatting a Windows drive
                     automationChat.innerHTML = `
                         <p>To format a Windows drive using PowerShell:</p>
                         <pre>
-    \$DriveLetter = "C" # Enter the drive letter you want to format
+    \$DriveLetter = "C" 
     Format-Volume -DriveLetter \$DriveLetter -FileSystem NTFS -Confirm:\$false
                         </pre>
                     `;
