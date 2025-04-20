@@ -318,7 +318,7 @@ export default function Home() {
                                     py={7}
                                     rightIcon={<Icon as={FaRobot} />}
                                 >
-                                    CONVULYZE
+                                    CONVOLYZE
                                 </Button>
                             </Link>
                         </MotionBox>
