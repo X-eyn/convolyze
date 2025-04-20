@@ -12,12 +12,12 @@ if (typeof Highcharts === "object") {
   solidGauge(Highcharts);
 }
 
-export const MeterGauge = ({ value }: { value: number }) => {
+export const MeterGauge = ({ value, size }: { value: number, size?: string }) => {
   const options = useMemo(() => ({
     chart: {
       type: "solidgauge",
-      height: 200,
-      width: 300,
+      height: size ? size : 200,
+      width: size ? size : 300,
       backgroundColor: "transparent"
     },
     title: null,
@@ -71,7 +71,7 @@ export const MeterGauge = ({ value }: { value: number }) => {
     credits: {
       enabled: false
     }
-  }), [value]);
+  }), [value, size]);
 
   return (
     <HighchartsReact
