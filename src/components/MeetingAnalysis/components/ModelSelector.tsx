@@ -17,12 +17,14 @@ export const ModelSelector = ({onChange, selected}: {onChange: React.Dispatch<Re
                 {GPT_MODELS.map(m => 
                     <MenuItem key={m} onClick={() => onChange(m)}>{m}</MenuItem>
                 )}
+                {/* Commenting out other models as requested
                 <MenuItem disabled style={{fontWeight: 'bold', backgroundColor: '#f0f0f0'}}>
                     Google Models
                 </MenuItem>
                 {GEMINI_MODELS.map(m => 
                     <MenuItem key={m} onClick={() => onChange(m)}>{m}</MenuItem>
                 )}
+                */}
             </MenuList>
         </Menu>
     )
